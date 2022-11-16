@@ -17,7 +17,7 @@
   }
 }
 
-.app__skills-list {
+.app__skills-frontend {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
@@ -44,10 +44,14 @@
   div {
     width: 90px;
     height: 90px;
+    // background-color: var(--primary-color);
     border-radius: 50%;
-    background-color: #fef4f5;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-style: solid;
+    border-width: 2px;
 
     img {
+      object-fit: contain;
       width: 50%;
       height: 50%;
     }

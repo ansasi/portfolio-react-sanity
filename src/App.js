@@ -1,17 +1,20 @@
-import React from 'react';
+import React from "react";
+import { Toaster } from "react-hot-toast";
 
-import { About, Footer, Header, Skills, Testimonial, Work } from './container';
-import { Navbar } from './components';
-import './App.scss';
+import { About, Contact, Header, Skills, Testimonial, Portfolio } from "./container";
+import { Navbar, Footer } from "./components";
+import "./App.scss";
 
 const App = () => (
   <div className="app">
+    <Toaster />
     <Navbar />
     <Header />
     <About />
-    <Work />
-    <Skills />
-    <Testimonial />
+    <Portfolio />
+    {/* <Skills /> */}
+    {/* <Testimonial /> */}
+    <Contact />
     <Footer />
   </div>
 );
