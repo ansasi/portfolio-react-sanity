@@ -29,10 +29,13 @@ const Skills = () => {
         return 0;
       });
       console.log(data);
-      setSkillsFrontend(data.filter((work) => work.tags.include("frontend")));
-      setSkillsBackend(data.filter((work) => work.tags.include("backend")));
+      setSkillsFrontend(data.filter((skill) => skill.tags.includes("frontend")));
+      setSkillsBackend(data.filter((skill) => skill.tags.includes("backend")));
     });
   }, []);
+
+  console.log(skillsFrontend);
+  console.log(skillsBackend);
 
   return (
     <>
@@ -41,7 +44,7 @@ const Skills = () => {
       <div className="app__skills-container">
         <h3>Frontend</h3>
         <motion.div className="app__skills-frontend">
-          {setSkillsFrontend.map((skill) => (
+          {skillsFrontend.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
@@ -56,7 +59,7 @@ const Skills = () => {
         </motion.div>
         <h3>Backend</h3>
         <motion.div className="app__skills-backend">
-          {setSkillsBackend.map((skill) => (
+          {skillsBackend.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
