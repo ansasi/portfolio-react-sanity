@@ -12,7 +12,7 @@ const App = () => (
     <Header />
     <About />
     <Portfolio />
-    {/* <Skills /> */}
+    <Skills />
     {/* <Testimonial /> */}
     <Contact />
     <Footer />

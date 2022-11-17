@@ -1,34 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import toast from "react-hot-toast";
 
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import "./Contact.scss";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const form = useRef();
 
-  const { username, email, message } = formData;
+  const { name, email, message } = formData;
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
-    if (formData.username === "" || formData.email === "" || formData.message === "") {
+  const handleSubmit = (e) => {
+    if (formData.name === "" || formData.email === "" || formData.message === "") {
       toast.error("Please fill all fields");
       return;
     }
 
     setLoading(true);
 
+    console.log(form);
+    // Send email
+    emailjs.sendForm(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      form.current,
+      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+    );
+    e.preventDefault();
+
+    // Update in DB
     const contact = {
       _type: "contact",
-      name: formData.username,
+      name: formData.name,
       email: formData.email,
       message: formData.message,
     };
@@ -62,14 +75,14 @@ const Contact = () => {
         </div>
       </div>
       {!isFormSubmitted ? (
-        <div className="app__contact-form app__flex">
+        <form className="app__contact-form app__flex" ref={form}>
           <div className="app__flex">
             <input
               className="p-text"
               type="text"
               placeholder="Your Name"
-              name="username"
-              value={username}
+              name="name"
+              value={name}
               onChange={handleChangeInput}
             />
           </div>
@@ -95,7 +108,7 @@ const Contact = () => {
           <button type="button" className="p-text" onClick={handleSubmit}>
             {!loading ? "Send Message" : "Sending..."}
           </button>
-        </div>
+        </form>
       ) : (
         <div>
           <h3 className="head-text">Thank you for getting in touch!</h3>

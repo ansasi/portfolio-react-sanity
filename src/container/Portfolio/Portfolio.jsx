@@ -43,7 +43,7 @@ const Portfolio = () => {
       </h2>
 
       <div className="app__work-filter">
-        {["Web App", "Mobile App", "React JS", "All"].map((item, index) => (
+        {["All", "Web App", "Mobile App", "React JS", "Next JS"].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
