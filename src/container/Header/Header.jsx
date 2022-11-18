@@ -45,8 +45,6 @@ const Header = () => (
           <p className="p-text">Freelancer</p>
         </div>
 
-        {/* Do one for mobiles */}
-
         <div className="tag-cmp app__flex">
           <a href={CV} download className="p-text">
             Download my CV
@@ -55,7 +53,7 @@ const Header = () => (
 
         <div className="tag-cmp app__flex">
           <a href="#contact" className="p-text">
-            Contact Me
+            Let's talk
           </a>
         </div>
       </div>
