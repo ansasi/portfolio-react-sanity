@@ -21,8 +21,9 @@
       background: var(--gray-color);
     }
     &.active {
-      background: var(--color-primary);
+      background: var(--primary-color);
       color: var(--secondary-color);
+      border-radius: 3rem;
     }
     @media screen and (min-width: 450px) {
       font-size: 1.6rem;

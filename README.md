@@ -6,7 +6,7 @@ npm install @sanity/client @sanity/image-url framer-motion node-sass react-icons
 ```
 
 ## Doing
-- Header img and CV OK
+- Header wrap img and CV
 - About Bold
 - Experiences
 
