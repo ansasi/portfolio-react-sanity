@@ -21,7 +21,7 @@ const Footer = () => {
 
       <ul className="app__footer-links">
         <li>
-          <a href="#">Home</a>
+          <a href="#home">Home</a>
         </li>
         <li>
           <a href="#about">About</a>
@@ -33,7 +33,7 @@ const Footer = () => {
           <a href="#portfolio">Portfolio</a>
         </li>
         <li>
-          <a href="#works">Works</a>
+          <a href="#experience">Experience</a>
         </li>
         <li>
           <a href="#contact">Contact</a>
