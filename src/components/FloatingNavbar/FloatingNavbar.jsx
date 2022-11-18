@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import { BiHomeAlt, BiBook, BiMessageDetail, BiBriefcaseAlt } from "react-icons/bi";
-import { AiOutlineUser, AiOutlineCopy } from "react-icons/ai";
+import { AiOutlineUser, AiOutlineAppstore } from "react-icons/ai";
+import { GiStrong } from "react-icons/gi";
 import { images } from "../../constants";
 import "./FloatingNavbar.scss";
 
@@ -24,18 +25,18 @@ const FloatingNavbar = () => {
         href="#skills"
         onClick={() => setActiveNav("#skills")}
         className={activeNav === "#skills" ? "active" : ""}>
-        <BiBook />
+        <GiStrong />
       </a>
       <a
         href="#portfolio"
         onClick={() => setActiveNav("#portfolio")}
         className={activeNav === "#portfolio" ? "active" : ""}>
-        <AiOutlineCopy />
+        <AiOutlineAppstore />
       </a>
       <a
-        href="#works"
-        onClick={() => setActiveNav("#works")}
-        className={activeNav === "#works" ? "active" : ""}>
+        href="#experience"
+        onClick={() => setActiveNav("#experience")}
+        className={activeNav === "#experience" ? "active" : ""}>
         <BiBriefcaseAlt />
       </a>
       <a
