@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import ReactTooltip from "react-tooltip";
+import { motion } from "framer-motion";
+import { MdWorkOutline } from "react-icons/md";
+import { FaAmazon } from "react-icons/fa";
+
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
@@ -10,54 +15,46 @@ const Experience = () => {
   const [experiences, setExperiences] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type == "experiences"]';
+    const query = '*[_type == "workExperience"]';
 
     client.fetch(query).then((data) => {
       // Sort by year
-      data.sort((a, b) => b.year - a.year);
+      data.sort((a, b) => parseInt(b.date) - parseInt(a.date));
       console.log(data);
       setExperiences(data);
     });
   }, []);
 
+  const getIcon = (company) => {
+    switch (company) {
+      case "Amazon":
+        return <FaAmazon />;
+      default:
+        return <MdWorkOutline />;
+    }
+  };
+
   return (
     <>
-      <h2 className="head-text">Experience</h2>
-
-      <div className="app__skills-container">
-        <div className="app__skills-exp">
-          {/* {experiences.map((experience) => (
-            <motion.div className="app__skills-exp-item" key={experience.year}>
-              <div className="app__skills-exp-year">
-                <p className="bold-text">{experience.year}</p>
-              </div>
-              <motion.div className="app__skills-exp-works">
-                {experience.works.map((work) => (
-                  <>
-                    <motion.div
-                      whileInView={{ opacity: [0, 1] }}
-                      transition={{ duration: 0.5 }}
-                      className="app__skills-exp-work"
-                      data-tip
-                      data-for={work.name}
-                      key={work.name}>
-                      <h4 className="bold-text">{work.name}</h4>
-                      <p className="p-text">{work.company}</p>
-                    </motion.div>
-                    <ReactTooltip
-                      id={work.name}
-                      effect="solid"
-                      arrowColor="#fff"
-                      className="skills-tooltip">
-                      {work.desc}
-                    </ReactTooltip>
-                  </>
-                ))}
-              </motion.div>
-            </motion.div>
-          ))} */}
-        </div>
-      </div>
+      <h2 className="head-text">
+        My work <span>Experience</span>
+      </h2>
+      <br />
+      <VerticalTimeline>
+        {experiences.map((experience) => (
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: "#ffffff", color: "#000" }}
+            contentArrowStyle={{ borderRight: "7px solid  #fff" }}
+            date={experience.date}
+            iconStyle={{ background: "#ffffff", color: "#000" }}
+            icon={getIcon(experience.company)}>
+            <h3 className="vertical-timeline-element-title">{experience.name}</h3>
+            <h4 className="vertical-timeline-element-subtitle">{experience.company}</h4>
+            <p className="p-text">{experience.desc}</p>
+          </VerticalTimelineElement>
+        ))}
+      </VerticalTimeline>
     </>
   );
 };
