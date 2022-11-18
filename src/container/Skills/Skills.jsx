@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import ReactTooltip from "react-tooltip";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
@@ -9,6 +8,7 @@ import "./Skills.scss";
 const Skills = () => {
   const [skillsFrontend, setSkillsFrontend] = useState([]);
   const [skillsBackend, setSkillsBackend] = useState([]);
+  const [skillsOther, setSkillsOther] = useState([]);
 
   useEffect(() => {
     const skillsQuery = '*[_type == "skills"]';
@@ -29,48 +29,74 @@ const Skills = () => {
         return 0;
       });
       console.log(data);
-      setSkillsFrontend(data.filter((skill) => skill.tags.includes("frontend")));
-      setSkillsBackend(data.filter((skill) => skill.tags.includes("backend")));
+      setSkillsFrontend(data.filter((skill) => skill.type === "frontend" || !skill.type));
+      setSkillsBackend(data.filter((skill) => skill.type === "backend" || !skill.type));
+      setSkillsOther(data.filter((skill) => skill.type === "other" || !skill.type));
     });
   }, []);
 
-  console.log(skillsFrontend);
-  console.log(skillsBackend);
-
   return (
     <>
-      <h2 className="head-text">Skills & Experiences</h2>
+      <h2 className="head-text">
+        My <span>Skills</span>
+      </h2>
 
       <div className="app__skills-container">
-        <h3>Frontend</h3>
-        <motion.div className="app__skills-frontend">
-          {skillsFrontend.map((skill) => (
-            <motion.div
-              whileInView={{ opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
-              className="app__skills-item app__flex"
-              key={skill.name}>
-              <div className="app__flex">
-                <img src={urlFor(skill.icon)} alt={skill.name} />
-              </div>
-              <p className="p-text">{skill.name}</p>
-            </motion.div>
-          ))}
+        <motion.div className="app__skills-category">
+          <div>
+            <h3 className="app__skills-category-name">Frontend</h3>
+          </div>
+          <div className="app__skills-skill-group">
+            {skillsFrontend.map((skill) => (
+              <motion.div
+                whileInView={{ opacity: [0, 1] }}
+                transition={{ duration: 0.5 }}
+                className="app__skills-skill app__flex"
+                key={skill.name}>
+                <div className="app__flex">
+                  <img src={urlFor(skill.icon)} alt={skill.name} />
+                </div>
+                <p className="app__skills-skill-name">{skill.name}</p>
+                <p className="app__skills-skill-level">{skill.level}</p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
-        <h3>Backend</h3>
-        <motion.div className="app__skills-backend">
-          {skillsBackend.map((skill) => (
-            <motion.div
-              whileInView={{ opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
-              className="app__skills-item app__flex"
-              key={skill.name}>
-              <div className="app__flex">
-                <img src={urlFor(skill.icon)} alt={skill.name} />
-              </div>
-              <p className="p-text">{skill.name}</p>
-            </motion.div>
-          ))}
+        <motion.div className="app__skills-category">
+          <h3 className="app__skills-category-name">Backend</h3>
+          <div className="app__skills-skill-group">
+            {skillsBackend.map((skill) => (
+              <motion.div
+                whileInView={{ opacity: [0, 1] }}
+                transition={{ duration: 0.5 }}
+                className="app__skills-skill app__flex"
+                key={skill.name}>
+                <div className="app__flex">
+                  <img src={urlFor(skill.icon)} alt={skill.name} />
+                </div>
+                <p className="app__skills-skill-name">{skill.name}</p>
+                <p className="app__skills-skill-level">{skill.level}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+        <motion.div className="app__skills-category">
+          <h3 className="app__skills-category-name">Other</h3>
+          <div className="app__skills-skill-group">
+            {skillsOther.map((skill) => (
+              <motion.div
+                whileInView={{ opacity: [0, 1] }}
+                transition={{ duration: 0.5 }}
+                className="app__skills-skill app__flex"
+                key={skill.name}>
+                <div className="app__flex">
+                  <img src={urlFor(skill.icon)} alt={skill.name} />
+                </div>
+                <p className="app__skills-skill-name">{skill.name}</p>
+                <p className="app__skills-skill-level">{skill.level}</p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </>

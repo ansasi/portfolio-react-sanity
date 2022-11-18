@@ -6,8 +6,9 @@ npm install @sanity/client @sanity/image-url framer-motion node-sass react-icons
 ```
 
 ## Doing
-- Header img
-- About
+- Header img, CV,  
+- About (CV)
 - Skills
 - Experiences
 - Navbar baja
+- BG colors

@@ -28,7 +28,6 @@ const Contact = () => {
 
     setLoading(true);
 
-    console.log(form);
     // Send email
     emailjs.sendForm(
       process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -58,7 +57,9 @@ const Contact = () => {
 
   return (
     <>
-      <h2 className="head-text">Take a coffee & chat with me</h2>
+      <h2 className="head-text">
+        Take a coffee & <span>chat</span> with me
+      </h2>
 
       <div className="app__contact-cards">
         <div className="app__contact-card ">
