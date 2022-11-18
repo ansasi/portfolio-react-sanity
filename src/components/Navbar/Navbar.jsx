@@ -7,6 +7,7 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const navbarLinks = ["home", "about", "skills", "portfolio", "experience", "contact"];
 
   return (
     <nav className="app__navbar">
@@ -16,10 +17,10 @@ const Navbar = () => {
         </a>
       </div>
       <ul className="app__navbar-links">
-        {["home", "about", "skills", "portfolio", "experience", "contact"].map((item) => (
-          <li className="app__flex p-text" key={`link-${item}`}>
+        {navbarLinks.map((link) => (
+          <li className="app__flex p-text" key={`link-${link}`}>
             <div />
-            <a href={`#${item}`}>{item}</a>
+            <a href={`#${link}`}>{link}</a>
           </li>
         ))}
       </ul>
@@ -33,10 +34,10 @@ const Navbar = () => {
             transition={{ duration: 0.85, ease: "easeOut" }}>
             <HiX onClick={() => setToggle(false)} />
             <ul>
-              {["home", "about", "work", "skills", "contact"].map((item) => (
-                <li key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)}>
-                    {item}
+              {navbarLinks.map((link) => (
+                <li key={link}>
+                  <a href={`#${link}`} onClick={() => setToggle(false)}>
+                    {link}
                   </a>
                 </li>
               ))}
