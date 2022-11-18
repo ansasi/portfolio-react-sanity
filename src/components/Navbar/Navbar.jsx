@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 
+import { BiHomeAlt, BiBook, BiMessageDetail, BiBriefcaseAlt } from "react-icons/bi";
+import { AiOutlineUser, AiOutlineCopy } from "react-icons/ai";
 import { images } from "../../constants";
 import "./Navbar.scss";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [activeNav, setActiveNav] = useState("#");
 
   return (
     <nav className="app__navbar">

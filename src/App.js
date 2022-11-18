@@ -2,7 +2,7 @@ import React from "react";
 import { Toaster } from "react-hot-toast";
 
 import { About, Contact, Header, Skills, Testimonial, Portfolio } from "./container";
-import { Navbar, Footer } from "./components";
+import { Navbar, Footer, FloatingNavbar } from "./components";
 import "./App.scss";
 
 const App = () => (
@@ -16,6 +16,7 @@ const App = () => (
     {/* <Testimonial /> */}
     <Contact />
     <Footer />
+    <FloatingNavbar />
   </div>
 );
 

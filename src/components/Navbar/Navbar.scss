@@ -80,7 +80,7 @@
     }
   }
 
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 }
@@ -95,7 +95,6 @@
   justify-content: center;
   align-items: center;
   background-color: var(--secondary-color);
-
 
   svg {
     width: 70%;
@@ -114,13 +113,13 @@
 
     width: 80%;
     height: 100vh;
-    
+
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
-    
-    background: url('../../assets/bgWhite.png');
+
+    background: url("../../assets/bgWhite.png");
     background-color: var(--white-color);
     background-size: cover;
     background-repeat: repeat;
@@ -166,12 +165,18 @@
       }
     }
 
-    @media screen and (min-width: 850px) {
+    @media screen and (min-width: 800px) {
+      display: none;
+    }
+    @media screen and (max-width: 500px) {
       display: none;
     }
   }
 
-  @media screen and (min-width: 850px) {
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+  @media screen and (max-width: 500px) {
     display: none;
   }
 }
