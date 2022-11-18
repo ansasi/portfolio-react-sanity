@@ -26,6 +26,8 @@ import about03 from "../assets/about03.png";
 import about04 from "../assets/about04.png";
 
 import profile from "../assets/profile.png";
+import profile_ansasi from "../assets/profile_ansasi.jpg";
+import profile_ansasi_no_bg from "../assets/profile_ansasi_no_bg.png";
 import circle from "../assets/circle.svg";
 import logo from "../assets/logo.png";
 
@@ -61,4 +63,5 @@ export default {
   circle,
   logo,
   amazon,
+  profile_ansasi_no_bg,
 };
