@@ -74,7 +74,9 @@
     flex-direction: column;
     margin-top: 3rem;
 
-    p {
+    p,
+    a {
+      text-decoration: none;
       width: 100%;
       // text-transform: uppercase;
       text-align: right;
@@ -84,14 +86,19 @@
         font-weight: 800;
         color: var(--black-color);
         text-align: left;
+      }
+    }
+    a {
+      color: var(--secondary-color);
+      font-size: 1.5rem;
+      font-weight: 600;
 
-        @media screen and (min-width: 2000px) {
-          font-size: 2rem;
-        }
+      @media screen and (min-width: 2000px) {
+        font-size: 2.5rem;
+      }
 
-        @media screen and (max-width: 450px) {
-          font-size: 0.9rem;
-        }
+      @media screen and (max-width: 450px) {
+        font-size: 1.2rem;
       }
     }
   }

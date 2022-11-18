@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import { AppWrap } from "../../wrapper";
 import { images } from "../../constants";
+import CV from "../../assets/CV.pdf";
 import "./Header.scss";
 
 const scaleVariants = {
@@ -47,14 +48,15 @@ const Header = () => (
         {/* Do one for mobiles */}
 
         <div className="tag-cmp app__flex">
-          <p className="p-text">
-            Download my <span className="bold-text">CV</span>
-          </p>
+          <a href={CV} download className="p-text">
+            Download my CV
+          </a>
         </div>
 
         <div className="tag-cmp app__flex">
-          <a href="#contact">Contact</a>
-          <p className="p-text">Contact Me</p>
+          <a href="#contact" className="p-text">
+            Contact Me
+          </a>
         </div>
       </div>
     </motion.div>
