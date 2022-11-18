@@ -2,22 +2,21 @@ import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 
-import { BiHomeAlt, BiBook, BiMessageDetail, BiBriefcaseAlt } from "react-icons/bi";
-import { AiOutlineUser, AiOutlineCopy } from "react-icons/ai";
 import { images } from "../../constants";
 import "./Navbar.scss";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const [activeNav, setActiveNav] = useState("#");
 
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <img src={images.logo} alt="logo" />
+        <a href={"#home"}>
+          <img src={images.logo} alt="logo" />
+        </a>
       </div>
       <ul className="app__navbar-links">
-        {["home", "about", "work", "skills", "contact"].map((item) => (
+        {["home", "about", "skills", "portfolio", "experience", "contact"].map((item) => (
           <li className="app__flex p-text" key={`link-${item}`}>
             <div />
             <a href={`#${item}`}>{item}</a>
