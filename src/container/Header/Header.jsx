@@ -32,16 +32,24 @@ const Header = () => (
         </div>
 
         <div className="tag-cmp app__flex">
-          <p className="p-text">Web Developer</p>
-          <p className="p-text">Cloud Architect</p>
-          <p className="p-text">Data Engineer</p>
+          <p className="p-text">
+            <span className="bold-text">Web </span>Developer
+          </p>
+          <p className="p-text">
+            <span className="bold-text">Cloud </span>Architect
+          </p>
+          <p className="p-text">
+            <span className="bold-text">Data </span>Engineer
+          </p>
           <p className="p-text">Freelancer</p>
         </div>
 
         {/* Do one for mobiles */}
 
         <div className="tag-cmp app__flex">
-          <p className="p-text">Download my CV</p>
+          <p className="p-text">
+            Download my <span className="bold-text">CV</span>
+          </p>
         </div>
 
         <div className="tag-cmp app__flex">
