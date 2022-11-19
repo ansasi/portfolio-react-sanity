@@ -1,6 +1,7 @@
 {
   "name": "portfolio-react-sanity",
   "version": "0.1.0",
+  "homepage": "https://ansasi.netlify.app",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.9.1",

@@ -10,6 +10,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 import "./Experience.scss";
+import { ExperienceDB } from "./ExperienceDB";
 
 const Experience = () => {
   const [experiences, setExperiences] = useState([]);
@@ -17,12 +18,18 @@ const Experience = () => {
   useEffect(() => {
     const query = '*[_type == "workExperience"]';
 
-    client.fetch(query).then((data) => {
-      // Sort by year
-      data.sort((a, b) => parseInt(b.date) - parseInt(a.date));
-      console.log(data);
-      setExperiences(data);
-    });
+    client
+      .fetch(query)
+      .then((data) => {
+        // Sort by year
+        data.sort((a, b) => parseInt(b.date) - parseInt(a.date));
+        console.log(data);
+        setExperiences(data);
+      })
+      .catch((err) => {
+        console.log(err);
+        setExperiences(ExperienceDB);
+      });
   }, []);
 
   const getIcon = (company) => {

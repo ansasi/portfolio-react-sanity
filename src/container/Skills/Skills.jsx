@@ -4,35 +4,45 @@ import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Skills.scss";
+import { SkillsDB } from "./SkillsDB";
 
 const Skills = () => {
   const [skillsFrontend, setSkillsFrontend] = useState([]);
   const [skillsBackend, setSkillsBackend] = useState([]);
   const [skillsOther, setSkillsOther] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const skillsQuery = '*[_type == "skills"]';
 
-    client.fetch(skillsQuery).then((data) => {
-      // Sort by alphabet
-      data.sort((a, b) => {
-        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
-        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
-        if (nameA < nameB) {
-          return -1;
-        }
-        if (nameA > nameB) {
-          return 1;
-        }
+    client
+      .fetch(skillsQuery)
+      .then((data) => {
+        // Sort by alphabet
+        data.sort((a, b) => {
+          const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+          const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
 
-        // names must be equal
-        return 0;
+          // names must be equal
+          return 0;
+        });
+        setSkillsFrontend(data.filter((skill) => skill.type === "frontend" || !skill.type));
+        setSkillsBackend(data.filter((skill) => skill.type === "backend" || !skill.type));
+        setSkillsOther(data.filter((skill) => skill.type === "other" || !skill.type));
+        setLoaded(true);
+      })
+      .catch((err) => {
+        console.log(err);
+        setSkillsFrontend(SkillsDB.filter((skill) => skill.type === "frontend" || !skill.type));
+        setSkillsBackend(SkillsDB.filter((skill) => skill.type === "backend" || !skill.type));
+        setSkillsOther(SkillsDB.filter((skill) => skill.type === "other" || !skill.type));
       });
-      console.log(data);
-      setSkillsFrontend(data.filter((skill) => skill.type === "frontend" || !skill.type));
-      setSkillsBackend(data.filter((skill) => skill.type === "backend" || !skill.type));
-      setSkillsOther(data.filter((skill) => skill.type === "other" || !skill.type));
-    });
   }, []);
 
   return (
@@ -54,7 +64,11 @@ const Skills = () => {
                 className="app__skills-skill app__flex"
                 key={skill.name}>
                 <div className="app__flex">
-                  <img src={urlFor(skill.icon)} alt={skill.name} />
+                  {loaded ? (
+                    <img src={urlFor(skill.icon)} alt={skill.name} />
+                  ) : (
+                    <img src={skill.icon} alt={skill.name} />
+                  )}
                 </div>
                 <p className="app__skills-skill-name">{skill.name}</p>
                 <p className="app__skills-skill-level">{skill.level}</p>
