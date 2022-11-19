@@ -23,7 +23,6 @@ const Experience = () => {
       .then((data) => {
         // Sort by year
         data.sort((a, b) => parseInt(b.date) - parseInt(a.date));
-        console.log(data);
         setExperiences(data);
       })
       .catch((err) => {
