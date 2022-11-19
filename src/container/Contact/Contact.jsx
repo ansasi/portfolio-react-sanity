@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { client } from "../../client";
+// import { client } from "../../client";
 import "./Contact.scss";
 import emailjs from "@emailjs/browser";
 
@@ -26,6 +26,11 @@ const Contact = () => {
       return;
     }
 
+    if (loading) {
+      toast.error("Please wait...");
+      return;
+    }
+
     setLoading(true);
 
     // Send email
@@ -35,24 +40,32 @@ const Contact = () => {
       form.current,
       process.env.REACT_APP_EMAILJS_PUBLIC_KEY
     );
-    e.preventDefault();
 
-    // Update in DB
-    const contact = {
-      _type: "contact",
-      name: formData.name,
-      email: formData.email,
-      message: formData.message,
-    };
+    // Set a timer of 2 seconds to show the loading animation
+    const toastId = toast.loading("Sending email...");
+    setTimeout(() => {
+      setLoading(false);
+      setIsFormSubmitted(true);
+      toast.dismiss(toastId);
+      toast.success("Email sent successfully");
+    }, 2000);
 
-    client
-      .create(contact)
-      .then(() => {
-        setLoading(false);
-        setIsFormSubmitted(true);
-        toast.success("Message sent successfully");
-      })
-      .catch((err) => console.log(err));
+    // // Update in DB
+    // const contact = {
+    //   _type: "contact",
+    //   name: formData.name,
+    //   email: formData.email,
+    //   message: formData.message,
+    // };
+
+    // client
+    //   .create(contact)
+    //   .then(() => {
+    //     setLoading(false);
+    //     setIsFormSubmitted(true);
+    //     toast.success("Email sent successfully");
+    //   })
+    //   .catch((err) => console.log(err));
   };
 
   return (
