@@ -1,4 +1,8 @@
-### Get started
+### Personal portfolio
+
+This is my personal portfolio.
+
+## Libraries
 
 ```bash
 npm install @sanity/client @sanity/image-url framer-motion node-sass react-icons react-tooltip 
@@ -7,4 +11,4 @@ npm install @sanity/client @sanity/image-url framer-motion node-sass react-icons
 
 Testimonials are not yet included
 
-I have created a defaultData for each component which needs backend data
+I have created a defaultData for each component which needs backend data in case Sanity gives any problem.
