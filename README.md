@@ -7,4 +7,4 @@ npm install @sanity/client @sanity/image-url framer-motion node-sass react-icons
 
 Testimonials are not yet included
 
-I have created a default DB for each component which needs backend data
+I have created a defaultData for each component which needs backend data

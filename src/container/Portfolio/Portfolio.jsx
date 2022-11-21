@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Portfolio.scss";
-import { PortfolioDB } from "./PortfolioDB";
+import { PortfolioData } from "../../constants/defaultData";
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
@@ -26,8 +26,8 @@ const Portfolio = () => {
       })
       .catch((err) => {
         console.log(err);
-        setProjects(PortfolioDB);
-        setFilterProject(PortfolioDB);
+        setProjects(PortfolioData);
+        setFilterProject(PortfolioData);
       });
   }, []);
 

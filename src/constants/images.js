@@ -24,7 +24,7 @@ import ecommerce from "../assets/ecommerce.jpg";
 
 import profile from "../assets/profile.png";
 import tools from "../assets/tools.jfif";
-import profile_ansasi_no_bg from "../assets/profile_ansasi_no_bg.png";
+import profileAnsasiNoBg from "../assets/profile_ansasi_no_bg.png";
 import circle from "../assets/circle.svg";
 import logo from "../assets/logo.png";
 
@@ -52,7 +52,7 @@ export default {
   circle,
   logo,
   amazon,
-  profile_ansasi_no_bg,
+  profileAnsasiNoBg,
   tools,
   netflix_clone,
   gym,

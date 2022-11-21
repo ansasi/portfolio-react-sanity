@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import "./About.scss";
 import { urlFor, client } from "../../client";
-import { AboutDB } from "./AboutDB";
+import { AboutData } from "../../constants/defaultData";
 
 const About = () => {
   const [abouts, setAbouts] = useState([]);
@@ -21,7 +21,7 @@ const About = () => {
       })
       .catch((err) => {
         console.log(err);
-        setAbouts(AboutDB);
+        setAbouts(AboutData);
       });
   }, []);
 

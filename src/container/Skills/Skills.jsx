@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Skills.scss";
-import { SkillsDB } from "./SkillsDB";
+import { SkillsData } from "../../constants/defaultData";
 
 const Skills = () => {
   const [skillsFrontend, setSkillsFrontend] = useState([]);
@@ -39,9 +39,9 @@ const Skills = () => {
       })
       .catch((err) => {
         console.log(err);
-        setSkillsFrontend(SkillsDB.filter((skill) => skill.type === "frontend" || !skill.type));
-        setSkillsBackend(SkillsDB.filter((skill) => skill.type === "backend" || !skill.type));
-        setSkillsOther(SkillsDB.filter((skill) => skill.type === "other" || !skill.type));
+        setSkillsFrontend(SkillsData.filter((skill) => skill.type === "frontend" || !skill.type));
+        setSkillsBackend(SkillsData.filter((skill) => skill.type === "backend" || !skill.type));
+        setSkillsOther(SkillsData.filter((skill) => skill.type === "other" || !skill.type));
       });
   }, []);
 
