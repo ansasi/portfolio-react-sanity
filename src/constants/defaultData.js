@@ -29,7 +29,7 @@ export const AboutData = [
 
 export const ExperienceData = [
   {
-    name: "Data Engineer",
+    name: "Business Intelligence Engineer",
     company: "Amazon",
     date: "2022",
     desc: "I worked in the headquarters of Amazon EU in Luxembourg developing SQL models, automating repetitive tasks with Python, developing websites and designing and deploying cloud architectures for the Logistic department. ",
