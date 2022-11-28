@@ -24,7 +24,7 @@ import ecommerce from "../assets/ecommerce.jpg";
 
 import profile from "../assets/profile.png";
 import tools from "../assets/tools.jfif";
-import profileAnsasiNoBg from "../assets/profile_ansasi_no_bg.jpg";
+import profileAnsasiNoBg from "../assets/profile_ansasi_no_bg.png";
 import circle from "../assets/circle.svg";
 import logo from "../assets/logo.png";
 
