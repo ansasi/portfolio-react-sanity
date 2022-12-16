@@ -42,6 +42,9 @@ const Header = () => (
           <p className="p-text">
             <span className="bold-text">Data </span>Engineer
           </p>
+          <p className="p-text">
+            <span className="bold-text">Business </span>Intelligence
+          </p>
           <p className="p-text">Freelancer</p>
         </div>
 

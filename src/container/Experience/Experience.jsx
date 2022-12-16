@@ -3,6 +3,7 @@ import ReactTooltip from "react-tooltip";
 import { motion } from "framer-motion";
 import { MdWorkOutline } from "react-icons/md";
 import { FaAmazon } from "react-icons/fa";
+import { GiBrain } from "react-icons/gi";
 
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
@@ -22,7 +23,7 @@ const Experience = () => {
       .fetch(query)
       .then((data) => {
         // Sort by year
-        data.sort((a, b) => parseInt(b.date) - parseInt(a.date));
+        data.sort((a, b) => a.order - b.order);
         setExperiences(data);
       })
       .catch((err) => {
@@ -35,6 +36,8 @@ const Experience = () => {
     switch (company) {
       case "Amazon":
         return <FaAmazon />;
+      case "DataCentric":
+        return <GiBrain />;
       default:
         return <MdWorkOutline />;
     }

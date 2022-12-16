@@ -29,22 +29,32 @@ export const AboutData = [
 
 export const ExperienceData = [
   {
+    name: "Data Engineer",
+    company: "DataCentric",
+    date: "DEC 2022 - PRESENT",
+    desc: "I worked in the headquarters of Amazon EU in Luxembourg developing SQL models, automating repetitive tasks with Python, developing websites and designing and deploying cloud architectures for the Logistic department. ",
+    order: 1,
+  },
+  {
     name: "Business Intelligence Engineer",
     company: "Amazon",
-    date: "2022",
+    date: "MAR 2022 - SEP 2022",
     desc: "I worked in the headquarters of Amazon EU in Luxembourg developing SQL models, automating repetitive tasks with Python, developing websites and designing and deploying cloud architectures for the Logistic department. ",
+    order: 2,
   },
   {
     name: "Data Scientist",
     company: "CIC Lab",
-    date: "2021",
+    date: "SEP 2021 - DEC 2021",
     desc: "I worked on a project for a Saargummi's factory, I improved their Data process using Python and R and developed a Machine Learning model using Python libraries to predict when the parts produced will have an error. ",
+    order: 3,
   },
   {
     name: "Data Scientist",
     company: "IIT",
-    date: "2021",
+    date: "JUN 2021 - JUL 2021 ",
     desc: "I enhanced data processing and predictive modeling for Saargummi's factory. Continuing with the project that I started when working for CIC Lab.",
+    order: 4,
   },
 ];
 
