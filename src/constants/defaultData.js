@@ -32,7 +32,7 @@ export const ExperienceData = [
     name: "Data Engineer",
     company: "DataCentric",
     date: "DEC 2022 - PRESENT",
-    desc: "I worked in the headquarters of Amazon EU in Luxembourg developing SQL models, automating repetitive tasks with Python, developing websites and designing and deploying cloud architectures for the Logistic department. ",
+    desc: "I develop the cloud infrastructure of the company and its clients using AWS to launch ETLs, Dockers, VM (EC2) and other tools, in order to improve the automation of their data process and to standardize it using the last cloud technology.",
     order: 1,
   },
   {

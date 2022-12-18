@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.scss";
-import { BsLinkedin, BsInstagram } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { images } from "../../constants";
 
@@ -15,7 +15,7 @@ const Footer = () => {
       {/* <a href="#" className="app__footer-logo">
         ANSASI
       </a> */}
-      <a href="#" className="app__footer-logo">
+      <a href="#home" className="app__footer-logo">
         <img src={images.logo} alt="logo" />
       </a>
 

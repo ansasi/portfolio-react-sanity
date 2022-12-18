@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 
-import { BiHomeAlt, BiBook, BiMessageDetail, BiBriefcaseAlt } from "react-icons/bi";
+import { BiHomeAlt, BiMessageDetail, BiBriefcaseAlt } from "react-icons/bi";
 import { AiOutlineUser, AiOutlineAppstore } from "react-icons/ai";
 import { GiStrong } from "react-icons/gi";
-import { images } from "../../constants";
 import "./FloatingNavbar.scss";
 
 const FloatingNavbar = () => {
@@ -12,7 +10,10 @@ const FloatingNavbar = () => {
 
   return (
     <div className="app__floatingnavbar-icon-links">
-      <a href="#" onClick={() => setActiveNav("#")} className={activeNav === "#" ? "active" : ""}>
+      <a
+        href="#home"
+        onClick={() => setActiveNav("#")}
+        className={activeNav === "#" ? "active" : ""}>
         <BiHomeAlt />
       </a>
       <a

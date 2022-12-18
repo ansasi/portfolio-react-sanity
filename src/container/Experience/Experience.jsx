@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ReactTooltip from "react-tooltip";
-import { motion } from "framer-motion";
 import { MdWorkOutline } from "react-icons/md";
 import { FaAmazon } from "react-icons/fa";
 import { GiBrain } from "react-icons/gi";

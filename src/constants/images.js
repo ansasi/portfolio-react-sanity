@@ -30,6 +30,7 @@ import logo from "../assets/logo.png";
 
 import amazon from "../assets/amazon.png";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   email,
   mobile,
