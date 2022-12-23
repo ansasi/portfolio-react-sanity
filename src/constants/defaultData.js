@@ -101,7 +101,7 @@ export const SkillsData = [
   {
     name: "AWS",
     level: "advanced",
-    type: "",
+    type: "all",
     icon: images.aws,
   },
   {
@@ -113,7 +113,7 @@ export const SkillsData = [
   {
     name: "C++",
     level: "intermediate",
-    type: "backend",
+    type: "backend, other",
     icon: images.cpp,
   },
   {
@@ -149,7 +149,7 @@ export const SkillsData = [
   {
     name: "JavaScript",
     level: "advanced",
-    type: "",
+    type: "all",
     icon: images.javascript,
   },
   {
@@ -161,8 +161,14 @@ export const SkillsData = [
   {
     name: "Python",
     level: "professional",
-    type: "backend",
+    type: "backend, other",
     icon: images.python,
+  },
+  {
+    name: "Terrafom",
+    level: "intermediate",
+    type: "other",
+    icon: images.terraform,
   },
   {
     name: "R",

@@ -32,16 +32,51 @@ const Skills = () => {
           // names must be equal
           return 0;
         });
-        setSkillsFrontend(data.filter((skill) => skill.type === "frontend" || !skill.type));
-        setSkillsBackend(data.filter((skill) => skill.type === "backend" || !skill.type));
-        setSkillsOther(data.filter((skill) => skill.type === "other" || !skill.type));
+        setSkillsFrontend(
+          data.filter(
+            (skill) =>
+              skill.type.toLowerCase().includes("frontend") ||
+              skill.type.toLowerCase().includes("all")
+          )
+        );
+        setSkillsBackend(
+          data.filter(
+            (skill) =>
+              skill.type.toLowerCase().includes("backend") ||
+              skill.type.toLowerCase().includes("all")
+          )
+        );
+        setSkillsOther(
+          data.filter(
+            (skill) =>
+              skill.type.toLowerCase().includes("other") || skill.type.toLowerCase().includes("all")
+          )
+        );
         setLoaded(true);
       })
       .catch((err) => {
         console.log(err);
-        setSkillsFrontend(SkillsData.filter((skill) => skill.type === "frontend" || !skill.type));
-        setSkillsBackend(SkillsData.filter((skill) => skill.type === "backend" || !skill.type));
-        setSkillsOther(SkillsData.filter((skill) => skill.type === "other" || !skill.type));
+        setSkillsFrontend(
+          SkillsData.filter(
+            (skill) =>
+              skill.type.toLowerCase().includes("frontend") ||
+              skill.type.toLowerCase().includes("all")
+          )
+        );
+        setSkillsBackend(
+          SkillsData.filter(
+            (skill) =>
+              skill.type.toLowerCase().includes("backend") ||
+              skill.type.toLowerCase().includes("all")
+          )
+        );
+        setSkillsOther(
+          SkillsData.filter(
+            (skill) =>
+              skill.type.toLowerCase().includes("backend") ||
+              skill.type.toLowerCase().includes("all")
+          )
+        );
       });
   }, []);
 
