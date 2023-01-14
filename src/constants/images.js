@@ -22,6 +22,7 @@ import netflix_clone from "../assets/netflix_clone.jpg";
 import gym from "../assets/gym.jpg";
 import social_media from "../assets/social_media.jpg";
 import ecommerce from "../assets/ecommerce.jpg";
+import open_ai from "../assets/openai_chat.jpg";
 
 import profile from "../assets/profile.png";
 import tools from "../assets/tools.jfif";
@@ -61,4 +62,5 @@ export default {
   gym,
   social_media,
   ecommerce,
+  open_ai,
 };

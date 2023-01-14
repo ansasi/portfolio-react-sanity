@@ -95,6 +95,15 @@ export const PortfolioData = [
     image: images.social_media,
     tags: ["Social Media", "Mobile App", "Web App", "React JS", "Sanity", "User Auth"],
   },
+  {
+    title: "Open AI Chat",
+    description:
+    '"A GPT-3-powered chatbot developed for my personal portfolio, showcasing my skills in creating conversational AI that can handle a wide range of queries and integrate with multiple platforms." Description provided by this AI.',
+    codeLink: "https://open-ai-vanilla.vercel.app/",
+    projectLink: "https://github.com/ansasi/open_ai_vanilla",
+    image: images.open_ai,
+    tags: ["AI", "Chatbot", "Web App", "Vanilla JS", "Open AI"],
+  }
 ];
 
 export const SkillsData = [
