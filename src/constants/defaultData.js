@@ -29,31 +29,31 @@ export const AboutData = [
 
 export const ExperienceData = [
   {
+    name: "Cloud Data Engineer",
+    company: "Alpiq",
+    date: "MAY 2023 - PRESENT",
+    desc: "Cloud Data Engineer at Alpiq working for IT Data & Analytics department, I maintain and improve business projects by ensuring high availability, resilience, and cost-effectiveness on the AWS platform. I achieve this by leveraging tools such as Terraform for infrastructure deployment, GitLab CI/CD for continuous integration and delivery, and Docker for containerization, consistently aligning with the latest technological advancements to support various business units.",
+    order: 1,
+  },
+  {
     name: "Data Engineer",
     company: "DataCentric",
-    date: "DEC 2022 - PRESENT",
+    date: "DEC 2022 - MAY 2023",
     desc: "I develop the cloud infrastructure of the company and its clients using AWS to launch ETLs, Dockers, VM (EC2) and other tools, in order to improve the automation of their data process and to standardize it using the last cloud technology.",
-    order: 1,
+    order: 2,
   },
   {
     name: "Business Intelligence Engineer",
     company: "Amazon",
     date: "MAR 2022 - SEP 2022",
     desc: "I worked in the headquarters of Amazon EU in Luxembourg developing SQL models, automating repetitive tasks with Python, developing websites and designing and deploying cloud architectures for the Logistic department. ",
-    order: 2,
-  },
-  {
-    name: "Data Scientist",
-    company: "CIC Lab",
-    date: "SEP 2021 - DEC 2021",
-    desc: "I worked on a project for a Saargummi's factory, I improved their Data process using Python and R and developed a Machine Learning model using Python libraries to predict when the parts produced will have an error. ",
     order: 3,
   },
   {
     name: "Data Scientist",
-    company: "IIT",
-    date: "JUN 2021 - JUL 2021 ",
-    desc: "I enhanced data processing and predictive modeling for Saargummi's factory. Continuing with the project that I started when working for CIC Lab.",
+    company: "CIC Lab",
+    date: "JUN 2021 - DEC 2021",
+    desc: "I worked on a project for a Saargummi's factory, I improved their Data process using Python and R and developed a Machine Learning model using Python libraries to predict when the parts produced will have an error. ",
     order: 4,
   },
 ];
@@ -78,13 +78,13 @@ export const PortfolioData = [
     tags: ["Sports", "Mobile App", "Web App", "React JS"],
   },
   {
-    title: "Netflix Clone",
+    title: "Event App",
     description:
-      "This website is a Netflix clone (your browser may detect it as phishing). It uses firebase to authenticate the users and to save their favorite TV shows and films. ",
-    codeLink: "https://github.com/ansasi/react-netflix-clone",
-    projectLink: "https://ansasi.github.io/react-netflix-clone/",
-    image: images.netflix_clone,
-    tags: ["Streaming Platform", "Web App", "React JS", "Firebase"],
+      "Event app, powered by Next.js and TypeScript, streamlines creating and attending events with a user-friendly interface, secure authentication, seamless payment integration, and fast server-side rendering. Ideal for both organizers and attendees, it offers an efficient and enjoyable event experience.",
+    codeLink: "https://github.com/ansasi/event-webapp",
+    projectLink: "https://event-webapp-ansasi.vercel.app/",
+    image: images.event_app,
+    tags: ["NextJS", "Web App", "TypeScript", "Auth", "Stripe"],
   },
   {
     title: "Social Media Website",

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MdWorkOutline } from "react-icons/md";
-import { FaAmazon } from "react-icons/fa";
+import { FaAmazon, FaMountain } from "react-icons/fa";
 import { GiBrain } from "react-icons/gi";
 
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
@@ -36,6 +36,8 @@ const Experience = () => {
         return <FaAmazon />;
       case "DataCentric":
         return <GiBrain />;
+      case "Alpiq":
+        return <FaMountain />;
       default:
         return <MdWorkOutline />;
     }

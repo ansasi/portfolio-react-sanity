@@ -18,7 +18,7 @@ import about02 from "../assets/about02.png";
 import about03 from "../assets/about03.png";
 import about04 from "../assets/about04.png";
 
-import netflix_clone from "../assets/netflix_clone.jpg";
+import event_app from "../assets/event_app.jpg";
 import gym from "../assets/gym.jpg";
 import social_media from "../assets/social_media.jpg";
 import ecommerce from "../assets/ecommerce.jpg";
@@ -58,7 +58,7 @@ export default {
   amazon,
   profileAnsasiNoBg,
   tools,
-  netflix_clone,
+  event_app,
   gym,
   social_media,
   ecommerce,
