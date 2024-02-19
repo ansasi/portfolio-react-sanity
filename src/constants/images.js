@@ -24,7 +24,6 @@ import social_media from "../assets/social_media.jpg";
 import ecommerce from "../assets/ecommerce.jpg";
 import open_ai from "../assets/openai_chat.jpg";
 
-import profile from "../assets/profile.png";
 import tools from "../assets/tools.jfif";
 import profileAnsasiNoBg from "../assets/profile_ansasi_no_bg.png";
 import circle from "../assets/circle.svg";
@@ -52,7 +51,6 @@ export default {
   about02,
   about03,
   about04,
-  profile,
   circle,
   logo,
   amazon,
