@@ -9,6 +9,7 @@ import { SkillsData } from "../../constants/defaultData";
 const Skills = () => {
   const [skillsFrontend, setSkillsFrontend] = useState([]);
   const [skillsBackend, setSkillsBackend] = useState([]);
+  const [skillsCloud, setSkillsCloud] = useState([]);
   const [skillsOther, setSkillsOther] = useState([]);
   const [loaded, setLoaded] = useState(false);
 
@@ -32,6 +33,13 @@ const Skills = () => {
           // names must be equal
           return 0;
         });
+        setSkillsCloud(
+          data.filter(
+            (skill) =>
+              skill.type.toLowerCase().includes("cloud") ||
+              skill.type.toLowerCase().includes("all")
+          )
+        );
         setSkillsFrontend(
           data.filter(
             (skill) =>
@@ -56,6 +64,13 @@ const Skills = () => {
       })
       .catch((err) => {
         console.log(err);
+        setSkillsCloud(
+          SkillsData.filter(
+            (skill) =>
+              skill.type.toLowerCase().includes("cloud") ||
+              skill.type.toLowerCase().includes("all")
+          )
+        );
         setSkillsFrontend(
           SkillsData.filter(
             (skill) =>
@@ -87,6 +102,24 @@ const Skills = () => {
       </h2>
 
       <div className="app__skills-container">
+        <motion.div className="app__skills-category">
+          <h3 className="app__skills-category-name">Cloud</h3>
+          <div className="app__skills-skill-group">
+            {skillsCloud.map((skill) => (
+              <motion.div
+                whileInView={{ opacity: [0, 1] }}
+                transition={{ duration: 0.5 }}
+                className="app__skills-skill app__flex"
+                key={skill.name}>
+                <div className="app__flex">
+                  <img src={urlFor(skill.icon)} alt={skill.name} />
+                </div>
+                <p className="app__skills-skill-name">{skill.name}</p>
+                <p className="app__skills-skill-level">{skill.level}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
         <motion.div className="app__skills-category">
           <div>
             <h3 className="app__skills-category-name">Frontend</h3>
